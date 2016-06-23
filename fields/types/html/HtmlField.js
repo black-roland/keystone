@@ -157,6 +157,7 @@ module.exports = Field.create({
 			plugins: plugins,
 			menubar: options.menubar || false,
 			skin: options.skin || 'keystone',
+			language: options.language,
 		};
 
 		if (this.shouldRenderField()) {
