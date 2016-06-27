@@ -15,7 +15,7 @@ class LoginForm extends React.Component {
 		return (
 			<div className="auth-box__col">
 				<Form onSubmit={this.props.handleSubmit} noValidate>
-					<FormField label="Email" htmlFor="email">
+					<FormField label="E-mail" htmlFor="email">
 						<FormInput
 							type="email"
 							name="email"
@@ -24,7 +24,7 @@ class LoginForm extends React.Component {
 							ref="email"
 						/>
 					</FormField>
-					<FormField label="Password" htmlFor="password">
+					<FormField label="Пароль" htmlFor="password">
 						<FormInput
 							type="password"
 							name="password"
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
 						type="primary"
 						submit
 					>
-						Sign In
+						Войти
 					</Button>
 					{/* <Button disabled={this.state.animating} type="link-text">Forgot Password?</Button> */}
 				</Form>
