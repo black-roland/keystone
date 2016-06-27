@@ -51,7 +51,7 @@ var HomeView = React.createClass({
 		// If we have previous counts already saved, show them while we fetch
 		// the new ones. The counts can change e.g. if items were created since
 		// the last visit to the homepage
-		return plural(this.props.counts[key], '* Item', '* Items');
+		return plural(this.props.counts[key], '* запись', '* записи', '* записей');
 	},
 	getSpinner () {
 		if (Object.keys(this.props.counts).length === 0

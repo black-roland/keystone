@@ -28,7 +28,7 @@ var ListTile = React.createClass({
 					<Link
 						to={this.props.href + '?create'}
 						className="dashboard-group__list-create octicon octicon-plus"
-						title="Create"
+						title="Добавить запись"
 						tabIndex="-1"
 					/>
 				</span>
