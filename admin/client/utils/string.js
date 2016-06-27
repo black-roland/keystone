@@ -12,26 +12,36 @@ import { compact, size } from 'lodash';
  * If arity is 1, returns the plural form of the word.
  *
  * @param {String} count
- * @param {String} singular string
- * @param {String} plural string
+ * @param {String} one string
+ * @param {String} few string
+ * @param {String} many string
  * @return {String} singular or plural, * is replaced with count
  * @api public
  */
 
-exports.plural = function (count, sn, pl) {
-	if (arguments.length === 1) {
-		return inflect.pluralize(count);
-	}
-	if (typeof sn !== 'string') sn = '';
-	if (!pl) {
-		pl = inflect.pluralize(sn);
-	}
+exports.plural = function (count, one, few, many) {
+	few = few || one;
+	many = many || few;
+
 	if (typeof count === 'string') {
 		count = Number(count);
 	} else if (typeof count !== 'number') {
 		count = size(count);
 	}
-	return (count === 1 ? sn : pl).replace('*', count);
+
+	// singular used for numbers ending in 1, except 11 (1, 21, 31...)
+	// special case for numbers ending in 2-4, except 12-14 (2-4, 22-24, 32-34...)
+	// numbers ending in 11-14 use plural (11-14, 111-114, 211-214...)
+	var form;
+	if (count % 10 === 1 && count % 100 !== 11) {
+		form = one;
+	} else if (count % 10 >= 2 && count % 10 <= 4 && (count % 100 < 10 || count % 100 >= 20)) {
+		form = few;
+	} else {
+		form = many;
+	}
+
+	return form.replace('*', count);
 };
 
 
