@@ -7,8 +7,8 @@ import { FormField, FormInput, SegmentedControl } from 'elemental';
 import PopoutList from '../../../admin/client/App/shared/Popout/PopoutList';
 
 const INVERTED_OPTIONS = [
-	{ label: 'Linked To', value: false },
-	{ label: 'NOT Linked To', value: true },
+	{ label: 'Связано с', value: false },
+	{ label: 'НЕ связано с', value: true },
 ];
 
 function getDefaultValue () {
@@ -167,7 +167,7 @@ var RelationshipFilter = React.createClass({
 		const searchResults = this.state.searchResults.filter(i => {
 			return this.props.filter.value.indexOf(i.id) === -1;
 		});
-		const placeholder = this.isLoading() ? 'Loading...' : 'Find a ' + this.props.field.label + '...';
+		const placeholder = this.isLoading() ? 'Loading...' : 'Найти по имени...';
 		return (
 			<div ref="container">
 				<FormField>
@@ -178,13 +178,13 @@ var RelationshipFilter = React.createClass({
 				</FormField>
 				{selectedItems.length ? (
 					<PopoutList>
-						<PopoutList.Heading>Selected</PopoutList.Heading>
+						<PopoutList.Heading>Выбранные</PopoutList.Heading>
 						{this.renderItems(selectedItems, true)}
 					</PopoutList>
 				) : null}
 				{searchResults.length ? (
 					<PopoutList>
-						<PopoutList.Heading style={selectedItems.length ? { marginTop: '2em' } : null}>Items</PopoutList.Heading>
+						<PopoutList.Heading style={selectedItems.length ? { marginTop: '2em' } : null}>{ this.props.field.label }</PopoutList.Heading>
 						{this.renderItems(searchResults)}
 					</PopoutList>
 				) : null}

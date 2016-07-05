@@ -2,8 +2,8 @@ import React from 'react';
 import { SegmentedControl } from 'elemental';
 
 const VALUE_OPTIONS = [
-	{ label: 'Is Checked', value: true },
-	{ label: 'Is NOT Checked', value: false },
+	{ label: 'Выбрано', value: true },
+	{ label: 'НЕ выбрано', value: false },
 ];
 
 function getDefaultValue () {

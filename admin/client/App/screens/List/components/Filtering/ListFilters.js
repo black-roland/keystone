@@ -61,9 +61,9 @@ const Filter = React.createClass({
 						<Popout.Footer
 							ref="footer"
 							primaryButtonIsSubmit
-							primaryButtonLabel="Apply"
+							primaryButtonLabel="Применить"
 							secondaryButtonAction={this.close}
-							secondaryButtonLabel="Cancel" />
+							secondaryButtonLabel="Отмена" />
 					</form>
 				</Popout>
 			</span>

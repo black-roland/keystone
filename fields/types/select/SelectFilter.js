@@ -3,8 +3,8 @@ import { Checkbox, FormField, SegmentedControl } from 'elemental';
 import PopoutList from '../../../admin/client/App/shared/Popout/PopoutList';
 
 const INVERTED_OPTIONS = [
-	{ label: 'Matches', value: false },
-	{ label: 'Does NOT Match', value: true },
+	{ label: 'Совпадает', value: false },
+	{ label: 'НЕ совпадает', value: true },
 ];
 
 function getDefaultValue () {
@@ -79,7 +79,7 @@ var SelectFilter = React.createClass({
 					<SegmentedControl equalWidthSegments options={INVERTED_OPTIONS} value={filter.inverted} onChange={this.toggleInverted} />
 				</FormField>
 				<FormField style={{ borderBottom: '1px dashed rgba(0,0,0,0.1)', paddingBottom: '1em' }}>
-					<Checkbox autofocus onChange={this.toggleAllOptions} label="Select all options" checked={allSelected} indeterminate={indeterminate} />
+					<Checkbox autofocus onChange={this.toggleAllOptions} label="Выбрать все" checked={allSelected} indeterminate={indeterminate} />
 				</FormField>
 				{this.renderOptions()}
 			</div>

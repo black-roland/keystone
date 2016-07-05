@@ -94,7 +94,7 @@ var ListFiltersAdd = React.createClass({
 			<Popout.Pane onLayout={this.setPopoutHeight} key="list">
 				<Popout.Body>
 					<FormField style={{ borderBottom: '1px dashed rgba(0,0,0,0.1)', paddingBottom: '1em' }}>
-						<FormInput ref="search" value={this.state.searchString} onChange={this.updateSearch} placeholder="Find a filter..." />
+						<FormInput ref="search" value={this.state.searchString} onChange={this.updateSearch} placeholder="Поиск по имени..." />
 					</FormField>
 					{popoutList}
 				</Popout.Body>
@@ -128,14 +128,14 @@ var ListFiltersAdd = React.createClass({
 			<InputGroup.Section className={this.props.className}>
 				<Button id="listHeaderFilterButton" isActive={this.state.isOpen} onClick={this.state.isOpen ? this.closePopout : this.openPopout}>
 					<span className={this.props.className + '__icon octicon octicon-eye'} />
-					<span className={this.props.className + '__label'}>Filter</span>
+					<span className={this.props.className + '__label'}>Фильтры</span>
 					<span className="disclosure-arrow" />
 				</Button>
 				<Popout isOpen={this.state.isOpen} onCancel={this.closePopout} relativeToID="listHeaderFilterButton">
 					<Popout.Header
 						leftAction={selectedField ? this.navigateBack : null}
 						leftIcon={selectedField ? 'chevron-left' : null}
-						title={selectedField ? selectedField.label : 'Filter'}
+						title={selectedField ? selectedField.label : 'Фильтры'}
 						transitionDirection={selectedField ? 'next' : 'prev'} />
 					<Transition style={popoutBodyStyle} className={popoutPanesClassname} transitionName={selectedField ? 'Popout__pane-next' : 'Popout__pane-prev'} component="div">
 						{selectedField ? this.renderForm() : this.renderList()}

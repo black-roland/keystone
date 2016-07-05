@@ -3,8 +3,8 @@ import React from 'react';
 import { FormField, FormInput, FormRow, SegmentedControl } from 'elemental';
 
 const INVERTED_OPTIONS = [
-	{ label: 'Matches', value: false },
-	{ label: 'Does NOT Match', value: true },
+	{ label: 'Совпадает', value: false },
+	{ label: 'НЕ совпадает', value: true },
 ];
 
 function getDefaultValue () {

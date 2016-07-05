@@ -15,7 +15,7 @@ var NumberFilter = React.createClass({
 	getInitialState () {
 		return {
 			modeValue: MODE_OPTIONS[0].value, // 'matches'
-			modeLabel: MODE_OPTIONS[0].label, // 'Matches'
+			modeLabel: MODE_OPTIONS[0].label, // 'Совпадает'
 			value: '',
 			minValue: '',
 			maxValue: '',

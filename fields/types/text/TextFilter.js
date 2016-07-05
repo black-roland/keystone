@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom';
 import { FormField, FormInput, FormSelect, SegmentedControl } from 'elemental';
 
 const INVERTED_OPTIONS = [
-	{ label: 'Matches', value: false },
-	{ label: 'Does NOT Match', value: true },
+	{ label: 'Совпадает', value: false },
+	{ label: 'НЕ совпадает', value: true },
 ];
 
 const MODE_OPTIONS = [
-	{ label: 'Contains', value: 'contains' },
-	{ label: 'Exactly', value: 'exactly' },
-	{ label: 'Begins with', value: 'beginsWith' },
-	{ label: 'Ends with', value: 'endsWith' },
+	{ label: 'Содержит', value: 'contains' },
+	{ label: 'Точно совпадает', value: 'exactly' },
+	{ label: 'Начинается с', value: 'beginsWith' },
+	{ label: 'Оканчивается на', value: 'endsWith' },
 ];
 
 function getDefaultValue () {
