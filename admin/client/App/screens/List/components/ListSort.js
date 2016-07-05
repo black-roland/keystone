@@ -102,7 +102,7 @@ var ListSort = React.createClass({
 			<span>
 				{activeSortPath && (
 					<span>
-						<span className="ListHeader__sortedby">, отсортированных по столбцу: </span>
+						<span className="ListHeader__sortedby">, сортировка по столбцу: </span>
 						<a id="listHeaderSortButton" href="javascript:;" onClick={this.openPopout}>
 							{activeSortPath.label.toLowerCase()}
 							{activeSortPath.invert ? ' (по убыванию)' : ''}
