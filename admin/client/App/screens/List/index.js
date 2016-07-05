@@ -215,13 +215,13 @@ const ListView = React.createClass({
 		}
 		return (
 			<InputGroup.Section className="ListHeader__create">
-				<Button {...props} title={'Добавить ' + this.props.currentList.one.toLowerCase()}>
+				<Button {...props} title='Создать'>
 					<span className="ListHeader__create__icon octicon octicon-plus" />
 					<span className="ListHeader__create__label">
-						Добавить
+						Создать
 					</span>
 					<span className="ListHeader__create__label--lg">
-						Добавить {this.props.currentList.one.toLowerCase()}
+						Создать
 					</span>
 				</Button>
 			</InputGroup.Section>
