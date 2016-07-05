@@ -506,7 +506,7 @@ const ListView = React.createClass({
 					/>
 				) : null}
 				<BlankState style={{ marginTop: 40 }}>
-					<BlankState.Heading>No {this.props.currentList.plural.toLowerCase()} found&hellip;</BlankState.Heading>
+					<BlankState.Heading>No {this.props.currentList.many.toLowerCase()} found&hellip;</BlankState.Heading>
 					{this.renderBlankStateCreateButton()}
 				</BlankState>
 			</Container>
@@ -574,7 +574,7 @@ const ListView = React.createClass({
 		return (
 			<BlankState style={{ marginTop: 20, marginBottom: 20 }}>
 				<span className="octicon octicon-search" style={{ fontSize: 32, marginBottom: 20 }} />
-				<BlankState.Heading>No {this.props.currentList.plural.toLowerCase()}{matching}</BlankState.Heading>
+				<BlankState.Heading>No {this.props.currentList.many.toLowerCase()}{matching}</BlankState.Heading>
 			</BlankState>
 		);
 	},

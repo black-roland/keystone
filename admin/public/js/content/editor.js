@@ -37,7 +37,7 @@ jQuery(function ($) {
 
 			case 'list':
 				var href = adminPath + '/' + data.path;
-				var label = 'Manage ' + data.plural;
+				var label = 'Manage ' + data.many;
 
 				if (data.id) {
 					href += '/' + data.id;

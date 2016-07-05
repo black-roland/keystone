@@ -30,8 +30,9 @@ relationship.prototype.getProperties = function () {
 	var refList = this.refList;
 	return {
 		refList: {
-			singular: refList.one,
-			plural: refList.plural,
+			one: refList.one,
+			few: refList.few,
+			many: refList.many,
 			path: refList.path,
 			key: refList.key,
 		},

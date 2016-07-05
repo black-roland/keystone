@@ -57,7 +57,7 @@ const RelatedItemsList = React.createClass({
 				</table>
 			</div>
 		) : (
-			<h4 className="Relationship__noresults">No related {this.props.refList.plural}</h4>
+			<h4 className="Relationship__noresults">No related {this.props.refList.many}</h4>
 		);
 	},
 	renderTableCols () {
