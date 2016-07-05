@@ -119,7 +119,7 @@ var ListSort = React.createClass({
 								ref="search"
 								value={this.state.searchString}
 								onChange={this.updateSearch}
-								placeholder="Поиск столбца..."
+								placeholder="Поиск по имени..."
 							/>
 						</FormField>
 						<PopoutList>
