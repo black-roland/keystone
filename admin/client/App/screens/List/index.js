@@ -342,7 +342,7 @@ const ListView = React.createClass({
 			<div className="ListHeader">
 				<Container>
 					<h2 className="ListHeader__title">
-						{plural(items.count, ('* ' + list.singular), ('* ' + list.plural))}
+						{plural(items.count, ('* ' + list.one.toLowerCase()), ('* ' + list.few.toLowerCase(), ('* ' + list.many.toLowerCase())))}
 						<ListSort
 							activeSort={this.props.active.sort}
 							availableColumns={this.props.currentList.columns}

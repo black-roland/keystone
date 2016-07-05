@@ -102,16 +102,16 @@ var ListSort = React.createClass({
 			<span>
 				{activeSortPath && (
 					<span>
-						<span className="ListHeader__sortedby"> sorted by </span>
+						<span className="ListHeader__sortedby">, отсортированных по столбцу: </span>
 						<a id="listHeaderSortButton" href="javascript:;" onClick={this.openPopout}>
 							{activeSortPath.label.toLowerCase()}
-							{activeSortPath.invert ? ' (descending)' : ''}
+							{activeSortPath.invert ? ' (по убыванию)' : ''}
 							<span className="disclosure-arrow" />
 						</a>
 					</span>
 				)}
 				<Popout isOpen={this.state.popoutIsOpen} onCancel={this.closePopout} relativeToID="listHeaderSortButton">
-					<Popout.Header title="Sort" />
+					<Popout.Header title="Сортировка" />
 
 					<Popout.Body scrollable>
 						<FormField style={formFieldStyles}>
@@ -119,7 +119,7 @@ var ListSort = React.createClass({
 								ref="search"
 								value={this.state.searchString}
 								onChange={this.updateSearch}
-								placeholder="Find a field..."
+								placeholder="Поиск столбца..."
 							/>
 						</FormField>
 						<PopoutList>
@@ -128,7 +128,7 @@ var ListSort = React.createClass({
 					</Popout.Body>
 
 					<Popout.Footer>
-						<FormNote>Hold <kbd>alt</kbd> to toggle ascending/descending</FormNote>
+						<FormNote>Зажмите <kbd>alt</kbd> для переключения по возрастанию/убыванию</FormNote>
 					</Popout.Footer>
 				</Popout>
 			</span>
