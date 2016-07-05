@@ -49,7 +49,7 @@ var Header = React.createClass({
 			var links = [];
 
 			dd.items.forEach((el, i) => {
-				links.push(<Link key={'dd' + i} to={el.href} title={dd.list.singular}>{el.label}</Link>);
+				links.push(<Link key={'dd' + i} to={el.href} title={dd.list.one}>{el.label}</Link>);
 				if (i < dd.items.length - 1) {
 					links.push(<span key={'ds' + i} className="separator">,</span>); // eslint-disable-line comma-spacing
 				}
@@ -69,14 +69,14 @@ var Header = React.createClass({
 			return (
 				<Link className="EditForm__header__back" to={`${Keystone.adminPath}/${list.path}`}>
 					<span className="octicon octicon-chevron-left" />
-					{list.plural}
+					{list.many}
 				</Link>
 			);
 		} else {
 			// add the current list
 			els.push(
 				<li key="back">
-					<Link className="EditForm__header__back" to={`${Keystone.adminPath}/${list.path}`}>{list.plural}</Link>
+					<Link className="EditForm__header__back" to={`${Keystone.adminPath}/${list.path}`}>{list.many}</Link>
 				</li>
 			);
 			return <ul className="item-breadcrumbs" key="drilldown">{els}</ul>;
@@ -119,7 +119,7 @@ var Header = React.createClass({
 		return (
 			<Button type="success" {...props}>
 				<span className="octicon octicon-plus" />
-				<ResponsiveText hiddenXS={`New ${this.props.list.singular}`} visibleXS="Create" />
+				<ResponsiveText hiddenXS={`New ${this.props.list.one}`} visibleXS="Create" />
 			</Button>
 		);
 	},

@@ -280,7 +280,7 @@ var EditForm = React.createClass({
 		if (!this.props.list.nodelete) {
 			buttons.push(
 				<Button key="del" onClick={this.confirmDelete} type="link-delete" className="u-float-right">
-					<ResponsiveText hiddenXS={`delete ${this.props.list.singular.toLowerCase()}`} visibleXS="delete" />
+					<ResponsiveText hiddenXS={`delete ${this.props.list.one.toLowerCase()}`} visibleXS="delete" />
 				</Button>
 			);
 		}

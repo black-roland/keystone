@@ -41,7 +41,7 @@ jQuery(function ($) {
 
 				if (data.id) {
 					href += '/' + data.id;
-					label = 'Edit ' + data.singular;
+					label = 'Edit ' + data.one;
 				}
 
 				addButton($editable, href, label);

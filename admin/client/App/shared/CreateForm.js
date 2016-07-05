@@ -161,7 +161,7 @@ const CreateForm = React.createClass({
 				className="create-form"
 			>
 				<Modal.Header
-					text={'Create a new ' + list.singular}
+					text={'Создать ' + list.one.toLowerCase()}
 					onClose={this.props.onCancel}
 					showCloseButton
 				/>
@@ -170,12 +170,12 @@ const CreateForm = React.createClass({
 					{form}
 				</Modal.Body>
 				<Modal.Footer>
-					<Button type="success" submit>Create</Button>
+					<Button type="success" submit>Создать</Button>
 					<Button
 						type="link-cancel"
 						onClick={this.props.onCancel}
 					>
-						Cancel
+						Отмена
 					</Button>
 				</Modal.Footer>
 			</Form>

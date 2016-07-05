@@ -171,7 +171,7 @@ const ListView = React.createClass({
 	massDelete () {
 		const { checkedItems } = this.state;
 		const list = this.props.currentList;
-		const itemCount = plural(checkedItems, ('* ' + list.singular.toLowerCase()), ('* ' + list.plural.toLowerCase()));
+		const itemCount = plural(checkedItems, ('* ' + list.one.toLowerCase()), ('* ' + list.many.toLowerCase()));
 		const itemIds = Object.keys(checkedItems);
 
 		this.setState({
@@ -215,13 +215,13 @@ const ListView = React.createClass({
 		}
 		return (
 			<InputGroup.Section className="ListHeader__create">
-				<Button {...props} title={'Create ' + this.props.currentList.singular}>
+				<Button {...props} title={'Добавить ' + this.props.currentList.one.toLowerCase()}>
 					<span className="ListHeader__create__icon octicon octicon-plus" />
 					<span className="ListHeader__create__label">
-						Create
+						Добавить
 					</span>
 					<span className="ListHeader__create__label--lg">
-						Create {this.props.currentList.singular}
+						Добавить {this.props.currentList.one.toLowerCase()}
 					</span>
 				</Button>
 			</InputGroup.Section>
@@ -327,8 +327,8 @@ const ListView = React.createClass({
 				currentPage={currentPage}
 				onPageSelect={this.handlePageSelect}
 				pageSize={pageSize}
-				plural={list.plural}
-				singular={list.singular}
+				plural={list.many}
+				singular={list.one}
 				style={{ marginBottom: 0 }}
 				total={items.count}
 				limit={10}
@@ -375,7 +375,7 @@ const ListView = React.createClass({
 							<Button
 								isActive={!this.state.constrainTableWidth}
 								onClick={this.toggleTableWidth}
-								title="Expand table width"
+								title="Растянуть таблицу по ширине"
 							>
 								<span className="octicon octicon-mirror" />
 							</Button>
@@ -484,7 +484,7 @@ const ListView = React.createClass({
 		}
 		return (
 			<Button {...props}>
-				<span className="octicon octicon-plus" /> Create {list.singular}
+				<span className="octicon octicon-plus" /> Create {list.one}
 			</Button>
 		);
 	},

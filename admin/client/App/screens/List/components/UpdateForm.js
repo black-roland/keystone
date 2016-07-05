@@ -99,7 +99,7 @@ var UpdateForm = React.createClass({
 	},
 	renderForm () {
 		const { itemIds, list } = this.props;
-		const itemCount = plural(itemIds, ('* ' + list.singular), ('* ' + list.plural));
+		const itemCount = plural(itemIds, ('* ' + list.one), ('* ' + list.many));
 		const formAction = `${Keystone.adminPath}/${list.path}`;
 
 		return (
