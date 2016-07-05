@@ -12,6 +12,7 @@
 *.iws
 .idea/
 *.sublime-*
+.tags*
 
 logs
 node_modules/
