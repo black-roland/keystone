@@ -257,12 +257,12 @@ const ListView = React.createClass({
 		// action buttons
 		const actionUpdateButton = !list.noedit ? (
 			<InputGroup.Section>
-				<Button onClick={this.toggleUpdateModal} disabled={!checkedItemCount}>Update</Button>
+				<Button onClick={this.toggleUpdateModal} disabled={!checkedItemCount}>Редактировать</Button>
 			</InputGroup.Section>
 		) : null;
 		const actionDeleteButton = !list.nodelete ? (
 			<InputGroup.Section>
-				<Button onClick={this.massDelete} disabled={!checkedItemCount}>Delete</Button>
+				<Button onClick={this.massDelete} disabled={!checkedItemCount}>Удалить</Button>
 			</InputGroup.Section>
 		) : null;
 		const actionButtons = manageMode ? (
@@ -285,10 +285,10 @@ const ListView = React.createClass({
 				<InputGroup style={groupStyles} contiguous>
 					{selectAllButton}
 					<InputGroup.Section>
-						<Button onClick={() => this.handleManagementSelect('visible')} title="Select all rows">{items.count > pageSize ? 'Page' : 'All'} <small style={buttonNoteStyles}>({items.results.length})</small></Button>
+						<Button onClick={() => this.handleManagementSelect('visible')} title="Select all rows">{items.count > pageSize ? 'Всю страницу' : 'Все'} <small style={buttonNoteStyles}>({items.results.length})</small></Button>
 					</InputGroup.Section>
 					<InputGroup.Section>
-						<Button onClick={() => this.handleManagementSelect('none')} title="Deselect all rows">None</Button>
+						<Button onClick={() => this.handleManagementSelect('none')} title="Deselect all rows">Очистить</Button>
 					</InputGroup.Section>
 				</InputGroup>
 			</InputGroup.Section>
@@ -297,7 +297,7 @@ const ListView = React.createClass({
 		// selected count text
 		const selectedCountText = manageMode ? (
 			<InputGroup.Section grow>
-				<span style={{ color: '#666', display: 'inline-block', lineHeight: '2.4em', margin: 1 }}>{checkedItemCount} selected</span>
+				<span style={{ color: '#666', display: 'inline-block', lineHeight: '2.4em', margin: 1 }}>{plural(checkedItemCount, '* выбран', '* выбрано')}</span>
 			</InputGroup.Section>
 		) : null;
 
@@ -305,7 +305,7 @@ const ListView = React.createClass({
 		return (
 			<InputGroup style={{ float: 'left', marginRight: '.75em', marginBottom: 0 }}>
 				<InputGroup.Section>
-					<Button isActive={manageMode} onClick={() => this.toggleManageMode(!manageMode)}>Manage</Button>
+					<Button isActive={manageMode} onClick={() => this.toggleManageMode(!manageMode)}>Операции</Button>
 				</InputGroup.Section>
 				{selectButtons}
 				{actionButtons}
@@ -327,8 +327,8 @@ const ListView = React.createClass({
 				currentPage={currentPage}
 				onPageSelect={this.handlePageSelect}
 				pageSize={pageSize}
-				plural={list.many}
-				singular={list.one}
+				plural={list.many.toLowerCase()}
+				singular={list.one.toLowerCase()}
 				style={{ marginBottom: 0 }}
 				total={items.count}
 				limit={10}
