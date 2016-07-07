@@ -98,8 +98,8 @@ var EditForm = React.createClass({
 		const confirmationDialog = (
 			<ConfirmationDialog
 				isOpen
-				body={`Are you sure you want to delete <strong>${this.props.data.name}?</strong><br /><br />This cannot be undone.`}
-				confirmationLabel="Delete"
+				body={`Вы действительно хотите удалить <strong>${this.props.data.name}?</strong><br /><br />Данное действие невозможно отменить.`}
+				confirmationLabel="Удалить"
 				onCancel={this.removeConfirmationDialog}
 				onConfirmation={this.handleDelete}
 			/>

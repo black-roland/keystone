@@ -177,8 +177,8 @@ const ListView = React.createClass({
 		this.setState({
 			confirmationDialog: {
 				isOpen: true,
-				label: 'Delete',
-				body: `Are you sure you want to delete ${itemCount}?<br /><br />This cannot be undone.`,
+				label: 'Удалить',
+				body: `Вы действительно хотите удалить ${itemCount}?<br /><br />Данное действие невозможно отменить.`,
 				onConfirmation: () => {
 					this.props.dispatch(deleteItems(itemIds));
 					this.toggleManageMode();
@@ -438,8 +438,8 @@ const ListView = React.createClass({
 		this.setState({
 			confirmationDialog: {
 				isOpen: true,
-				label: 'Delete',
-				body: `Are you sure you want to delete <strong>${item.name}</strong>?<br /><br />This cannot be undone.`,
+				label: 'Удалить',
+				body: `Вы действительно хотите удалить <strong>${item.name}</strong>?<br /><br />Данное действие невозможно отменить.`,
 				onConfirmation: () => {
 					this.props.dispatch(deleteItem(item.id));
 					this.removeConfirmationDialog();
