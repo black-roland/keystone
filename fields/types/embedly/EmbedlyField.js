@@ -56,7 +56,7 @@ module.exports = Field.create({
 		if (!this.props.value.exists) {
 			return (
 				<FormField label={this.props.label}>
-					<FormInput noedit>(not set)</FormInput>
+					<FormInput noedit>(не установлено)</FormInput>
 				</FormField>
 			);
 		}

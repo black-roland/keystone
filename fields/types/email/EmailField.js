@@ -26,7 +26,7 @@ module.exports = Field.create({
 		return this.props.value ? (
 			<FormInput noedit href={'mailto:' + this.props.value}>{this.props.value}</FormInput>
 		) : (
-			<FormInput noedit>(not set)</FormInput>
+			<FormInput noedit>(не установлено)</FormInput>
 		);
 	},
 });
