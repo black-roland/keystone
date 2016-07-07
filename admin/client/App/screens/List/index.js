@@ -215,7 +215,7 @@ const ListView = React.createClass({
 		}
 		return (
 			<InputGroup.Section className="ListHeader__create">
-				<Button {...props} title='Создать'>
+				<Button {...props} title="Создать">
 					<span className="ListHeader__create__icon octicon octicon-plus" />
 					<span className="ListHeader__create__label">
 						Создать
@@ -342,7 +342,7 @@ const ListView = React.createClass({
 			<div className="ListHeader">
 				<Container>
 					<h2 className="ListHeader__title">
-						{plural(items.count, ('* ' + list.one.toLowerCase()), ('* ' + list.few.toLowerCase(), ('* ' + list.many.toLowerCase())))}
+						{plural(items.count, ('* ' + list.one.toLowerCase()), ('* ' + list.few.toLowerCase()), ('* ' + list.many.toLowerCase()))}
 						<ListSort
 							activeSort={this.props.active.sort}
 							availableColumns={this.props.currentList.columns}
