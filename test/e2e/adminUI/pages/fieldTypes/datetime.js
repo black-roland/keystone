@@ -7,7 +7,7 @@ module.exports = function DatetimeType(config) {
 			label: '.FormLabel',
 			nowButton: '.Button--default',
 			date: 'input[name="' + config.fieldName + '_date"]',
-			datePlaceholder: 'input[placeholder="YYYY-MM-DD"]',
+			datePlaceholder: 'input[placeholder="DD.MM.YYYY"]',
 			time: 'input[name="' + config.fieldName + '_time"]',
 			timePlaceholder: 'input[placeholder="HH:MM:SS am/pm"]',
 		},

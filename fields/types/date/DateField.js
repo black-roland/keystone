@@ -8,7 +8,7 @@ import { Button, InputGroup, FormInput } from 'elemental';
 TODO: Implement yearRange Prop, or deprecate for max / min values (better)
 */
 
-const DEFAULT_INPUT_FORMAT = 'YYYY-MM-DD';
+const DEFAULT_INPUT_FORMAT = 'DD.MM.YYYY';
 const DEFAULT_FORMAT_STRING = 'LL';
 
 module.exports = Field.create({
@@ -78,7 +78,7 @@ module.exports = Field.create({
 					/>
 				</InputGroup.Section>
 				<InputGroup.Section>
-					<Button onClick={this.setToday}>Today</Button>
+					<Button onClick={this.setToday}>Сегодня</Button>
 				</InputGroup.Section>
 			</InputGroup>
 		);

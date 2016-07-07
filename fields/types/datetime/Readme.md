@@ -6,7 +6,7 @@ Internally uses [moment.js](http://momentjs.com/) to manage date parsing, format
 
 If the `utc` option is set, `moment(value).utc()` is called in all methods to enable moment's utc mode.
 
-String parsing with moment will be done using the `parseFormat` option, which defaults to `"'YYYY-MM-DD h:m:s a'"`.
+String parsing with moment will be done using the `parseFormat` option, which defaults to `"'DD.MM.YYYY h:m:s a'"`.
 
 ## Methods
 

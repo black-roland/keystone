@@ -269,7 +269,7 @@ exports.testFieldType = function (List) {
 
 		it('should parse date input and return a moment object', function () {
 			var m = List.fields.date.parse('2016-02-27');
-			demand(m.format('YYYY-MM-DD')).equal('2016-02-27');
+			demand(m.format('DD.MM.YYYY')).equal('2016-02-27');
 		});
 
 		it('should format the date value using moment', function () {

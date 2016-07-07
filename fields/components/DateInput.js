@@ -17,7 +17,7 @@ module.exports = React.createClass({
 	},
 	getDefaultProps () {
 		return {
-			format: 'YYYY-MM-DD',
+			format: 'DD.MM.YYYY',
 		};
 	},
 	getInitialState () {
@@ -90,15 +90,15 @@ module.exports = React.createClass({
 		this.showPicker();
 	},
 	handleBlur (e) {
-		let rt = e.relatedTarget || e.nativeEvent.explicitOriginalTarget;
-		const popout = this.refs.popout.getPortalDOMNode();
-		while (rt) {
-			if (rt === popout) return;
-			rt = rt.parentNode;
-		}
-		this.setState({
-			pickerIsOpen: false,
-		});
+		// let rt = e.relatedTarget || e.nativeEvent.explicitOriginalTarget;
+		// const popout = this.refs.popout.getPortalDOMNode();
+		// while (rt) {
+		// 	if (rt === popout) return;
+		// 	rt = rt.parentNode;
+		// }
+		// this.setState({
+		// 	pickerIsOpen: false,
+		// });
 	},
 	render () {
 		const selectedDay = this.props.value;
@@ -120,6 +120,7 @@ module.exports = React.createClass({
 					ref="input"
 					onKeyPress={this.handleKeyPress}
 					value={this.state.inputValue} />
+				{/*
 				<Popout
 					ref="popout"
 					isOpen={this.state.pickerIsOpen}
@@ -132,6 +133,7 @@ module.exports = React.createClass({
 						onDayClick={this.handleDaySelect}
 						tabIndex={-1} />
 				</Popout>
+				*/}
 			</div>
 		);
 	},
