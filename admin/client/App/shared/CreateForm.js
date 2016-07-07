@@ -161,7 +161,7 @@ const CreateForm = React.createClass({
 				className="create-form"
 			>
 				<Modal.Header
-					text={'Создать ' + list.one.toLowerCase()}
+					text="Создать"
 					onClose={this.props.onCancel}
 					showCloseButton
 				/>
