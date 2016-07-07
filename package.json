@@ -115,8 +115,7 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim",
-      "aliasify"
+      "browserify-shim"
     ]
   },
   "browserify-shim": {
@@ -124,11 +123,6 @@
     "jquery": "global:$",
     "codemirror": "global:CodeMirror",
     "underscore": "global:_"
-  },
-  "aliasify": {
-    "aliases": {
-      "moment": "moment/min/moment-with-locales.js"
-    }
   },
   "author": "Jed Watson",
   "homepage": "http://keystonejs.com/",

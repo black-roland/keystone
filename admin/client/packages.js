@@ -21,6 +21,7 @@ module.exports = [
 	'lodash',
 	'marked',
 	'moment',
+	'moment/locale/ru',
 	'numeral',
 	'qs',
 	'react-addons-css-transition-group',

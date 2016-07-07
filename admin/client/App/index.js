@@ -9,6 +9,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import moment from 'moment';
+import 'moment/locale/ru';
 
 import App from './App';
 import Home from './screens/Home';
