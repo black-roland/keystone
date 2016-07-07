@@ -6,12 +6,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import classnames from 'classnames';
-import { BlankState, Button, Container, FormInput, InputGroup, Pagination, Spinner } from 'elemental';
+import { BlankState, Button, Container, FormInput, InputGroup, Spinner } from 'elemental';
 import { connect } from 'react-redux';
 
 import ConfirmationDialog from '../../shared/ConfirmationDialog';
 import CreateForm from '../../shared/CreateForm';
 import FlashMessages from '../../shared/FlashMessages';
+import Pagination from '../../shared/Pagination';
 import ItemsTable from './components/ItemsTable/ItemsTable';
 import ListColumnsForm from './components/ListColumnsForm';
 import ListDownloadForm from './components/ListDownloadForm';
@@ -506,7 +507,7 @@ const ListView = React.createClass({
 					/>
 				) : null}
 				<BlankState style={{ marginTop: 40 }}>
-					<BlankState.Heading>No {this.props.currentList.many.toLowerCase()} found&hellip;</BlankState.Heading>
+					<BlankState.Heading>Нет записей&hellip;</BlankState.Heading>
 					{this.renderBlankStateCreateButton()}
 				</BlankState>
 			</Container>
@@ -531,7 +532,7 @@ const ListView = React.createClass({
 					{(this.props.error) ? (
 						<FlashMessages
 							messages={{ error: [{
-								title: "There is a problem with the network, we're trying to reconnect..",
+								title: "Проблемы с сетью, попытка переподключиться...",
 							}] }}
 						/>
 					) : null}
@@ -570,11 +571,11 @@ const ListView = React.createClass({
 		if (this.props.active.filters.length) {
 			matching += (matching ? ' and ' : '') + plural(this.props.active.filters.length, '* filter', '* filters');
 		}
-		matching = matching ? ' found matching ' + matching : '.';
+		matching = matching ? ' по запросу «' + matching + '»' : '.';
 		return (
 			<BlankState style={{ marginTop: 20, marginBottom: 20 }}>
 				<span className="octicon octicon-search" style={{ fontSize: 32, marginBottom: 20 }} />
-				<BlankState.Heading>No {this.props.currentList.many.toLowerCase()}{matching}</BlankState.Heading>
+				<BlankState.Heading>Ничего не найдено{matching}</BlankState.Heading>
 			</BlankState>
 		);
 	},

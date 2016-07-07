@@ -420,6 +420,7 @@ module.exports = Field.create({
 					onChange={onChange}
 					id={'field_' + this.props.paths.select}
 					loadOptions={getOptions}
+					placeholder="Выберите значение..."
 				/>
 			</div>
 		);

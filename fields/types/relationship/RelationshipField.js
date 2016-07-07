@@ -186,6 +186,7 @@ module.exports = Field.create({
 				simpleValue
 				value={this.state.value}
 				valueKey="id"
+				placeholder="Выберите значение..."
 			/>
 		);
 	},

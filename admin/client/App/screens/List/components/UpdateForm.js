@@ -87,7 +87,7 @@ var UpdateForm = React.createClass({
 
 		const fieldsUI = formFields.length ? formFields : (
 			<BlankState style={{ padding: '3em 2em' }}>
-				<BlankState.Heading style={{ fontSize: '1.5em' }}>Choose a field above to begin</BlankState.Heading>
+				<BlankState.Heading style={{ fontSize: '1.5em' }}>Для начала выберите поле</BlankState.Heading>
 			</BlankState>
 		);
 
@@ -104,14 +104,14 @@ var UpdateForm = React.createClass({
 
 		return (
 			<Form type="horizontal" action={formAction} noValidate="true">
-				<Modal.Header text={'Update ' + itemCount} onClose={this.handleClose} showCloseButton />
+				<Modal.Header text={'Обновить ' + itemCount} onClose={this.handleClose} showCloseButton />
 				<Modal.Body>
-					<Select ref="initialFocusTarget" onChange={this.updateOptions} options={this.getOptions()} value={this.state.fields} key="field-select" multi />
+					<Select ref="initialFocusTarget" onChange={this.updateOptions} options={this.getOptions()} value={this.state.fields} key="field-select" multi placeholder="Выберите значение..." />
 					{this.renderFields()}
 				</Modal.Body>
 				<Modal.Footer>
-					<Button type="primary" submit>Update</Button>
-					<Button type="link-cancel" onClick={this.handleClose}>Cancel</Button>
+					<Button type="primary" submit>Обновить</Button>
+					<Button type="link-cancel" onClick={this.handleClose}>Отмена</Button>
 				</Modal.Footer>
 			</Form>
 		);
