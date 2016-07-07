@@ -34,7 +34,7 @@ module.exports = Field.create({
 	},
 
 	renderValue () {
-		return <FormInput noedit>{this.props.value ? 'password set' : 'password not set'}</FormInput>;
+		return <FormInput noedit>{this.props.value ? 'пароль установлен' : 'пароль не установлен'}</FormInput>;
 	},
 
 	renderField () {
@@ -45,18 +45,18 @@ module.exports = Field.create({
 		return (
 			<InputGroup>
 				<InputGroup.Section grow>
-					<FormInput type="password" name={this.props.path} placeholder="New password" ref="focusTarget" value={this.state.password} onChange={this.valueChanged.bind(this, 'password')} autoComplete="off" />
+					<FormInput type="password" name={this.props.path} placeholder="Новый пароль" ref="focusTarget" value={this.state.password} onChange={this.valueChanged.bind(this, 'password')} autoComplete="off" />
 				</InputGroup.Section>
 				<InputGroup.Section grow>
-					<FormInput type="password" name={this.props.paths.confirm} placeholder="Confirm new password" value={this.state.confirm} onChange={this.valueChanged.bind(this, 'confirm')} autoComplete="off" />
+					<FormInput type="password" name={this.props.paths.confirm} placeholder="Подтвердите пароль" value={this.state.confirm} onChange={this.valueChanged.bind(this, 'confirm')} autoComplete="off" />
 				</InputGroup.Section>
-				{this.state.passwordIsSet ? <InputGroup.Section><Button onClick={this.onCancel}>Cancel</Button></InputGroup.Section> : null}
+				{this.state.passwordIsSet ? <InputGroup.Section><Button onClick={this.onCancel}>Отмена</Button></InputGroup.Section> : null}
 			</InputGroup>
 		);
 	},
 
 	renderChangeButton () {
-		var label = this.state.passwordIsSet ? 'Change Password' : 'Set Password';
+		var label = this.state.passwordIsSet ? 'Изменить пароль' : 'Установить пароль';
 		return (
 			<Button ref="focusTarget" onClick={this.showChangeUI}>{label}</Button>
 		);
