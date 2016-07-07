@@ -127,7 +127,7 @@
   },
   "aliasify": {
     "aliases": {
-      "moment": "./node_modules/moment/min/moment-with-locales.js"
+      "moment": "moment/min/moment-with-locales.js"
     }
   },
   "author": "Jed Watson",
