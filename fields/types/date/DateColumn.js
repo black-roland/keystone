@@ -14,7 +14,7 @@ var DateColumn = React.createClass({
 		if (!value) return null;
 
 		const format = (this.props.col.type === 'datetime') ? 'LLL' : 'LL';
-		const formattedValue = moment(value).locale('ru').format(format);
+		const formattedValue = moment(value).format(format);
 
 		return (
 			<ItemsTableValue title={formattedValue} field={this.props.col.type}>
