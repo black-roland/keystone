@@ -145,7 +145,7 @@ var EditForm = React.createClass({
 				this.setState({
 					alerts: {
 						success: {
-							success: 'Your changes have been saved successfully',
+							success: 'Изменения успешно сохранены',
 						},
 					},
 					lastValues: this.state.values,
@@ -166,9 +166,9 @@ var EditForm = React.createClass({
 						component="span"
 						modifiedLabel="ID:"
 						modifiedValue={null}
-						normalLabel={`${upcase(list.autokey.path)}: `}
+						normalLabel="Машинное имя:"
 						normalValue={null}
-						title="Press <alt> to reveal the ID"
+						title="Нажмите <alt>, чтобы показать ID"
 						className="EditForm__key-or-id__label" />
 					<AltText
 						component="span"
@@ -176,7 +176,7 @@ var EditForm = React.createClass({
 						modifiedValue={<input ref="keyOrIdInput" onFocus={this.handleKeyFocus} value={this.props.data.id} className="EditForm__key-or-id__input" readOnly />}
 						normalLabel={null}
 						normalValue={<input ref="keyOrIdInput" onFocus={this.handleKeyFocus} value={this.props.data[list.autokey.path]} className="EditForm__key-or-id__input" readOnly />}
-						title="Press <alt> to reveal the ID"
+						title="Нажмите <alt>, чтобы показать ID"
 						className="EditForm__key-or-id__field" />
 				</div>
 			);
@@ -265,22 +265,22 @@ var EditForm = React.createClass({
 				{this.state.loading ? (
 					<span>
 						<Spinner type="inverted" />
-						&nbsp;Saving
+						&nbsp;Сохранение
 					</span>
 				) : (
-					'Save'
+					'Сохранить'
 				)}
 			</Button>,
 		];
 		buttons.push(
 			<Button key="reset" onClick={this.confirmReset} type="link-cancel">
-				<ResponsiveText hiddenXS="reset changes" visibleXS="reset" />
+				<ResponsiveText hiddenXS="сбросить изменения" visibleXS="сброс" />
 			</Button>
 		);
 		if (!this.props.list.nodelete) {
 			buttons.push(
 				<Button key="del" onClick={this.confirmDelete} type="link-delete" className="u-float-right">
-					<ResponsiveText hiddenXS={`delete ${this.props.list.one.toLowerCase()}`} visibleXS="delete" />
+					<ResponsiveText hiddenXS="удалить запись" visibleXS="удалить" />
 				</Button>
 			);
 		}
@@ -300,7 +300,7 @@ var EditForm = React.createClass({
 			data.createdAt = this.props.data.fields[this.props.list.tracking.createdAt];
 			if (data.createdAt) {
 				elements.push(
-					<FormField key="createdAt" label="Created on">
+					<FormField key="createdAt" label="Дата создания">
 						<FormInput noedit title={moment(data.createdAt).format('DD/MM/YYYY h:mm:ssa')}>{moment(data.createdAt).format('Do MMM YYYY')}</FormInput>
 					</FormField>
 				);
@@ -313,7 +313,7 @@ var EditForm = React.createClass({
 				let createdByName = getNameFromData(data.createdBy.name);
 				if (createdByName) {
 					elements.push(
-						<FormField key="createdBy" label="Created by">
+						<FormField key="createdBy" label="Кто создал">
 							<FormInput noedit>{data.createdBy.name.first} {data.createdBy.name.last}</FormInput>
 						</FormField>
 					);
@@ -325,7 +325,7 @@ var EditForm = React.createClass({
 			data.updatedAt = this.props.data.fields[this.props.list.tracking.updatedAt];
 			if (data.updatedAt && (!data.createdAt || data.createdAt !== data.updatedAt)) {
 				elements.push(
-					<FormField key="updatedAt" label="Updated on">
+					<FormField key="updatedAt" label="Дата обновления">
 						<FormInput noedit title={moment(data.updatedAt).format('DD/MM/YYYY h:mm:ssa')}>{moment(data.updatedAt).format('Do MMM YYYY')}</FormInput>
 					</FormField>
 				);
@@ -338,7 +338,7 @@ var EditForm = React.createClass({
 				let updatedByName = getNameFromData(data.updatedBy.name);
 				if (updatedByName) {
 					elements.push(
-						<FormField key="updatedBy" label="Updated by">
+						<FormField key="updatedBy" label="Кто изменил">
 							<FormInput noedit>{data.updatedBy.name.first} {data.updatedBy.name.last}</FormInput>
 						</FormField>
 					);
@@ -348,7 +348,7 @@ var EditForm = React.createClass({
 
 		return Object.keys(elements).length ? (
 			<div className="EditForm__meta">
-				<h3 className="form-heading">Meta</h3>
+				<h3 className="form-heading">Метаданные</h3>
 				{elements}
 			</div>
 		) : null;

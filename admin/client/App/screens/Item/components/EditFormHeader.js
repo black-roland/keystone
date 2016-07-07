@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Toolbar from './Toolbar';
 import ToolbarSection from './Toolbar/ToolbarSection';
-import { Button, FormIconField, FormInput, ResponsiveText } from 'elemental';
+import { Button, FormIconField, FormInput } from 'elemental';
 import { Link } from 'react-router';
 
 var Header = React.createClass({
@@ -69,7 +69,7 @@ var Header = React.createClass({
 			return (
 				<Link className="EditForm__header__back" to={`${Keystone.adminPath}/${list.path}`}>
 					<span className="octicon octicon-chevron-left" />
-					{list.many}
+					{list.label}
 				</Link>
 			);
 		} else {
@@ -94,7 +94,7 @@ var Header = React.createClass({
 						value={this.state.searchString}
 						onChange={this.searchStringChanged}
 						onKeyUp={this.handleEscapeKey}
-						placeholder="Search"
+						placeholder="Поиск"
 						className="EditForm__header__search-input" />
 				</FormIconField>
 			</form>
@@ -119,7 +119,7 @@ var Header = React.createClass({
 		return (
 			<Button type="success" {...props}>
 				<span className="octicon octicon-plus" />
-				<ResponsiveText hiddenXS={`New ${this.props.list.one}`} visibleXS="Create" />
+				<span>Создать</span>
 			</Button>
 		);
 	},
