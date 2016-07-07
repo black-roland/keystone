@@ -40,7 +40,7 @@ var SigninView = React.createClass({
 		e.preventDefault();
 		// If either password or mail are missing, show an error
 		if (!this.state.email || !this.state.password) {
-			return this.displayError('Please enter an email address and password to sign in.');
+			return this.displayError('Введите e-mail и пароль');
 		}
 
 		xhr({
@@ -54,8 +54,8 @@ var SigninView = React.createClass({
 		}, (err, resp, body) => {
 			if (err || body && body.error) {
 				return body.error === 'invalid csrf'
-					? this.displayError('Something went wrong; please refresh your browser and try again.')
-					: this.displayError('The email and password you entered are not valid.');
+					? this.displayError('Что-то пошло не так. Попробуйте обновить страницу и поробовать еще раз')
+					: this.displayError('Неверные логин или пароль');
 			} else {
 				// Redirect to where we came from or to the default admin path
 				if (Keystone.redirect) {
