@@ -13,8 +13,8 @@ var DateColumn = React.createClass({
 		const value = this.props.data.fields[this.props.col.path];
 		if (!value) return null;
 
-		const format = (this.props.col.type === 'datetime') ? 'MMMM Do YYYY, h:mm:ss a' : 'MMMM Do YYYY';
-		const formattedValue = moment(value).format(format);
+		const format = (this.props.col.type === 'datetime') ? 'LLL' : 'LL';
+		const formattedValue = moment(value).locale('ru').format(format);
 
 		return (
 			<ItemsTableValue title={formattedValue} field={this.props.col.type}>
