@@ -14,7 +14,7 @@ String parsing with moment will be done using the `inputFormat` option, which de
 
 Formats the stored value using moment, with the provided format string.
 
-`formatString` defaults to the `format` option, which defaults to `"Do MMM YYYY"`.
+`formatString` defaults to the `format` option, which defaults to `"LL"`.
 
 If no `formatString` is provided and the `format` option is false, the stored value will be returned.
 

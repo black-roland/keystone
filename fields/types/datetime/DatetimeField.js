@@ -28,7 +28,7 @@ module.exports = Field.create({
 
 	getDefaultProps () {
 		return {
-			formatString: 'Do MMM YYYY, h:mm:ss a',
+			formatString: 'LL, h:mm:ss a',
 		};
 	},
 

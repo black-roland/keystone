@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { Provider } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
+import moment from 'moment';
 
 import App from './App';
 import Home from './screens/Home';
@@ -15,6 +16,9 @@ import Item from './screens/Item';
 import List from './screens/List';
 
 import store from './store';
+
+// Set Moment global locale
+moment.locale('ru');
 
 // Sync the browser history to the Redux store
 const history = syncHistoryWithStore(browserHistory, store);

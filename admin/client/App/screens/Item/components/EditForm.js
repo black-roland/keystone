@@ -301,7 +301,7 @@ var EditForm = React.createClass({
 			if (data.createdAt) {
 				elements.push(
 					<FormField key="createdAt" label="Дата создания">
-						<FormInput noedit title={moment(data.createdAt).format('DD/MM/YYYY h:mm:ssa')}>{moment(data.createdAt).format('Do MMM YYYY')}</FormInput>
+						<FormInput noedit title={moment(data.createdAt).format('LLL')}>{moment(data.createdAt).format('LL')}</FormInput>
 					</FormField>
 				);
 			}
@@ -326,7 +326,7 @@ var EditForm = React.createClass({
 			if (data.updatedAt && (!data.createdAt || data.createdAt !== data.updatedAt)) {
 				elements.push(
 					<FormField key="updatedAt" label="Дата обновления">
-						<FormInput noedit title={moment(data.updatedAt).format('DD/MM/YYYY h:mm:ssa')}>{moment(data.updatedAt).format('Do MMM YYYY')}</FormInput>
+						<FormInput noedit title={moment(data.updatedAt).format('LLL')}>{moment(data.updatedAt).format('LL')}</FormInput>
 					</FormField>
 				);
 			}

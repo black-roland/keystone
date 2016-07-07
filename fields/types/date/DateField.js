@@ -9,7 +9,7 @@ TODO: Implement yearRange Prop, or deprecate for max / min values (better)
 */
 
 const DEFAULT_INPUT_FORMAT = 'YYYY-MM-DD';
-const DEFAULT_FORMAT_STRING = 'Do MMM YYYY';
+const DEFAULT_FORMAT_STRING = 'LL';
 
 module.exports = Field.create({
 

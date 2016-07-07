@@ -5,7 +5,7 @@ import React from 'react';
 import moment from 'moment';
 
 const DEFAULT_INPUT_FORMAT = 'YYYY-MM-DD';
-const DEFAULT_FORMAT_STRING = 'Do MMM YYYY';
+const DEFAULT_FORMAT_STRING = 'LL';
 
 module.exports = Field.create({
 
