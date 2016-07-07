@@ -252,7 +252,7 @@ localfile.prototype.uploadFile = function (item, file, update, callback) {
 	var filetype = file.mimetype || file.type;
 
 	if (field.options.allowedTypes && !_.includes(field.options.allowedTypes, filetype)) {
-		return callback(new Error('Unsupported File Type: ' + filetype));
+		return callback(new Error('Неподдерживаемый тип файла: ' + filetype));
 	}
 
 	if (typeof update === 'function') {

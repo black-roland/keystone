@@ -121,19 +121,19 @@ module.exports = Field.create({
 		if (this.hasLocal()) {
 			return (
 				<div className="file-values upload-queued">
-					<FormInput noedit>File selected - save to upload</FormInput>
+					<FormInput noedit>Файл выбран — сохраните для подтверждения</FormInput>
 				</div>
 			);
 		} else if (this.state.origin === 'cloudinary') {
 			return (
 				<div className="file-values select-queued">
-					<FormInput noedit>File selected from Cloudinary</FormInput>
+					<FormInput noedit>Файл из Cloudinary выбран</FormInput>
 				</div>
 			);
 		} else if (this.state.removeExisting) {
 			return (
 				<div className="file-values delete-queued">
-					<FormInput noedit>File {this.props.autoCleanup ? 'deleted' : 'removed'} - save to confirm</FormInput>
+					<FormInput noedit>Файл удален — сохраните для подтверждения</FormInput>
 				</div>
 			);
 		} else {
@@ -145,15 +145,15 @@ module.exports = Field.create({
 		if (this.state.removeExisting) {
 			return (
 				<Button type="link" onClick={this.undoRemove}>
-					Undo Remove
+					отменить удаление
 				</Button>
 			);
 		} else {
 			var clearText;
 			if (this.hasLocal()) {
-				clearText = 'Cancel Upload';
+				clearText = 'отменить загрузку';
 			} else {
-				clearText = (this.props.autoCleanup ? 'Delete File' : 'Remove File');
+				clearText = 'удалить файл';
 			}
 			return (
 				<Button type="link-cancel" onClick={this.removeFile}>
@@ -180,7 +180,7 @@ module.exports = Field.create({
 			<div key={this.props.path + '_toolbar'} className="file-toolbar">
 				<div className="u-float-left">
 					<Button onClick={this.changeFile}>
-						{this.hasFile() ? 'Change' : 'Upload'} File
+						{this.hasFile() ? 'Заменить' : 'Загрузить'} файл
 					</Button>
 					{this.hasFile() && this.renderClearButton()}
 				</div>

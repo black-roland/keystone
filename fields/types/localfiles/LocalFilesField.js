@@ -24,7 +24,7 @@ var LocalFilesFieldItem = React.createClass({
 	renderActionButton () {
 		if (!this.props.shouldRenderActionButton || this.props.isQueued) return null;
 
-		var buttonLabel = this.props.deleted ? 'Undo' : 'Remove';
+		var buttonLabel = this.props.deleted ? 'Отменить' : 'Удалить';
 		var buttonType = this.props.deleted ? 'link' : 'link-cancel';
 
 		return <Button key="action-button" type={buttonType} onClick={this.props.toggleDelete}>{buttonLabel}</Button>;
@@ -39,9 +39,9 @@ var LocalFilesFieldItem = React.createClass({
 
 		let note;
 		if (this.props.deleted) {
-			note = <FormInput key="delete-note" noedit className="field-type-localfiles__note field-type-localfiles__note--delete">save to delete</FormInput>;
+			note = <FormInput key="delete-note" noedit className="field-type-localfiles__note field-type-localfiles__note--delete">сохраните для удаление</FormInput>;
 		} else if (this.props.isQueued) {
-			note = <FormInput key="upload-note" noedit className="field-type-localfiles__note field-type-localfiles__note--upload">save to upload</FormInput>;
+			note = <FormInput key="upload-note" noedit className="field-type-localfiles__note field-type-localfiles__note--upload">сохраните для загрузки</FormInput>;
 		}
 
 		return (
@@ -137,12 +137,12 @@ module.exports = Field.create({
 
 		var clearFilesButton;
 		if (this.hasFiles()) {
-			clearFilesButton = <Button type="link-cancel" className="ml-5" onClick={this.clearFiles}>Clear Uploads</Button>;
+			clearFilesButton = <Button type="link-cancel" className="ml-5" onClick={this.clearFiles}>очистить список загрузки</Button>;
 		}
 
 		return (
 			<div className="files-toolbar">
-				<Button onClick={this.changeFiles}>Upload</Button>
+				<Button onClick={this.changeFiles}>Загрузить</Button>
 				{clearFilesButton}
 			</div>
 		);
@@ -159,7 +159,7 @@ module.exports = Field.create({
 				</div>
 
 				<div className="file-details">
-					<span className="file-message">Click to upload</span>
+					<span className="file-message">Нажмите для загрузки</span>
 				</div>
 			</div>
 		);
@@ -179,7 +179,7 @@ module.exports = Field.create({
 		_.forEach(this.state.items, function (thumb) {
 			if (thumb && thumb.props.deleted) remove.push(thumb.props._id);
 		});
-		if (remove.length) value = 'delete:' + remove.join(',');
+		if (remove.length) value = 'удалить:' + remove.join(',');
 
 		return <input ref="action" className="field-action" type="hidden" value={value} name={this.props.paths.action} />;
 	},
